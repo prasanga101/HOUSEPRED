@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>House Price Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-green" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Prasanga</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#"></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">House Price Prediction</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict the probability of Price of the Houses<br></h5>
+      </div>
+
+      <div class="row">
+        <form action='/' method="POST" class="col s12">
+          <div class="row">
+            <div class="input-field col s4">
+              <label for="first_name"><b>Enter size of the house feet (100):</b></label>
+              <br>
+              <input id="first_name"  type="text" class="validate" name="size" required>
+
+
+
+              
+
+            </div>
+            <div class="input-field col s4">
+              <label for="last_name"><b>Enter the number of Rooms:</b></label>
+              <br>
+              <input id="last_name" name="Bedrooms" type="text" class="validate" required>
+            </div>
+          </div>
+
+          <div class="row center">
+            <button type="submit" class="btn-large waves-effect waves-light orange" value="Predict">Predict Probability of Prices of The Houses</button>
+          </div>
+        </form>
+      </div>
+
+      {% if prediction is not none %}
+      <p>Predicted Price of the House (in 1000$): {{ prediction }}</p>
+  {% endif %}
+
+    </div>
+  </div>
+
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>
